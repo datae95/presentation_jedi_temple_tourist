@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "customers#index"
+
   resources :providers do
     member do
       post 'add_service', as: 'add_service_to'

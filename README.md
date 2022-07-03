@@ -1,24 +1,18 @@
-# README
+# Jedi Temple Tourist - Rapid Prototyping with Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+* Clone this repository
+* `bundle`
+* `rails db:setup`
+* `bin/dev`
 
-Things you may want to cover:
+## What is this all about?
+We created a version of this application in a presentation for the r-rails community.
+You can see step by step what we did in the [commits](https://github.com/datae95/presentation_jedi_temple_tourist/commits/main).
+There you can find a few explanations, too.
 
-* Ruby version
+When I used rails tools like `rails g scaffold`, you can see the command in the commit message.
+In most cases, I did not change anything in these commits (apart from running the migrations).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I don't recommend working this way for a application, you want to deploy.
+This is only suitable for creating a MVP.
