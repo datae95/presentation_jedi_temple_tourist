@@ -9,6 +9,12 @@
     <%= link_to article.customer.name, article.customer %>
   </p>
 
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Provider:</strong>
+    <%= article.provider ? link_to(article.provider.name, customer_path(article.provider_id)) : "No Provider" %>
+  </p>
+
   <p class="my-5">
     <strong class="block font-medium mb-1">Meeting point:</strong>
     <%= article.meeting_point %>
