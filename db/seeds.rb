@@ -37,3 +37,11 @@ Article.create([{
   meeting_point: "Training Hall 4",
   start_at: Date.tomorrow.midday
 }])
+
+Provider.create([{
+  name: "Anakin Skywalker",
+  email: "anakin.skywalker@knight.temple",
+}, {
+  name: "Qui-Gon Chin",
+  email: "chin@master.temple",
+}])
