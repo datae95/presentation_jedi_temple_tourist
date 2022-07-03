@@ -15,3 +15,13 @@ Customer.create([{
   email: "amidala@senat.gov",
   birthdate: "04.06.1992".to_date
 }])
+
+Service.create([{
+  name: "Jedi Temple Tour",
+  duration_in_min: 120,
+  price: 240.00
+}, {
+  name: "Lightsaber Show Fight",
+  duration_in_min: 30,
+  price: 60.00
+}])
