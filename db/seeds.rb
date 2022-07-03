@@ -25,3 +25,15 @@ Service.create([{
   duration_in_min: 30,
   price: 60.00
 }])
+
+Article.create([{
+  service: Service.first,
+  customer: Customer.first,
+  meeting_point: "Great Hall",
+  start_at: Date.tomorrow.midday
+}, {
+  service: Service.second,
+  customer: Customer.second,
+  meeting_point: "Training Hall 4",
+  start_at: Date.tomorrow.midday
+}])

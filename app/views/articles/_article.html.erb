@@ -1,18 +1,27 @@
 <div id="<%= dom_id article %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Service:</strong>
-    <%= article.service_id %>
+    <%= link_to article.service.name, article.service %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Customer:</strong>
-    <%= article.customer_id %>
+    <%= link_to article.customer.name, article.customer %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Meeting point:</strong>
     <%= article.meeting_point %>
   </p>
+      <strong>From-To:</strong>
+    <%= article.start_at %> - <%= article.start_at + article.service.duration_in_min.minutes %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= article.service.price %>€
+  </p>
+
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Start at:</strong>
