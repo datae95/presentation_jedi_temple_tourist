@@ -14,6 +14,34 @@
     <%= provider.iban %>
   </p>
 
+  <p>
+    <strong>Provided Services:</strong>
+    <ul>
+      <% provider.services.each do |service| %>
+        <li>
+          <%= link_to "Show #{service.name}", service, class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+          <div class="inline-block ml-2">
+            <%= button_to "Remove #{service.name}", remove_service_to_provider_path(provider, service_id: service), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium mb-2" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+
+  <p>
+    <strong>Providable Services:</strong>
+    <ul class="list">
+      <% provider.providable_services.each do |service| %>
+        <li>
+          <%= link_to "Show #{service.name}", service, class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+          <div class="inline-block ml-2">
+            <%= button_to "Add #{service.name}", add_service_to_provider_path(provider, service_id: service), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium mb-2" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+
   <% if action_name != "show" %>
     <%= link_to "Show this provider", provider, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this provider', edit_provider_path(provider), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>

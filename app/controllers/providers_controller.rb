@@ -1,5 +1,17 @@
 class ProvidersController < ApplicationController
-  before_action :set_provider, only: %i[ show edit update destroy ]
+  before_action :set_provider, only: %i[ show edit update destroy add_service remove_service ]
+
+  def add_service
+    service = Service.find(params[:service_id])
+    @provider.services << service
+    redirect_to provider_path @provider
+  end
+
+  def remove_service
+    service = Service.find(params[:service_id])
+    @provider.services -= [service]
+    redirect_to provider_path @provider
+  end
 
   # GET /providers or /providers.json
   def index
