@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        ArticleMailer.booking_confirmation_for(@article).deliver_now
         format.html { redirect_to article_url(@article), notice: "Article was successfully created." }
         format.json { render :show, status: :created, location: @article }
       else
